@@ -46,9 +46,10 @@ mean(seatac$gain, na.rm = TRUE)
 # Consider flights from JFK to SEA. What was the average, min, and max air time
 # of those flights? Bonus: use pipes to answer this question in one statement!
 # (and don't show any other data)
-filter(flights, origin == 'JFK', dest == 'SEA') %>%  
+sum.data <- filter(flights, origin == 'JFK', dest == 'SEA') %>%  
   summarize (
     average.air.time = mean(air_time, na.rm = TRUE),
     max.air.time = max(air_time, na.rm = TRUE),
     min.air.time = min(air_time, na.rm = TRUE)
   )
+sum.data
